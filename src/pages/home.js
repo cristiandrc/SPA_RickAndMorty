@@ -1,10 +1,7 @@
 import getData from '@utils/getData'
 
-const URL = 'https://rickandmortyapi.com/api/character/';
-
-
 const home = async () => {
-    const data = await getData(URL)
+    const data = await getData()
     const view = `
     <div class="character">
         ${data.results.map(result => `
@@ -14,7 +11,7 @@ const home = async () => {
                 <h2>${result.name}</h2>
             </a>
             </article>
-        `)}
+        `).join('')}
     </div>
     `
 

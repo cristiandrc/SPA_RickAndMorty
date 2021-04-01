@@ -1,0 +1,27 @@
+.header {
+    width: 80vw;
+    height: 90px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    &-logo {
+        height: 100%;
+        width: 30%;
+        img {
+            width: 150px;
+        }
+    }
+
+    &-nav {
+
+        &-logo {
+
+            height: 30px;
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+    }
+}
