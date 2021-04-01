@@ -1,4 +1,14 @@
 import './sass/style.scss'
+import Router from './routes/router'
+import getData from '@utils/getData'
+const url = 'https://rickandmortyapi.com/api/character/';
 
 
-console.log('hola')
+const hola = async () => {
+    let hola = await getData(url)
+    console.log(hola)
+}
+
+hola()
+
+window.addEventListener('load', Router())

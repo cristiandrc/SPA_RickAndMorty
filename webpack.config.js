@@ -17,6 +17,7 @@ module.exports = {
             '@templates': path.resolve(__dirname, 'src/templates/'),
             '@sass': path.resolve(__dirname, 'src/sass/'),
             '@images': path.resolve(__dirname, 'src/assets/images/'),
+            '@pages': path.resolve(__dirname, 'src/pages/'),
         }
     },
 
