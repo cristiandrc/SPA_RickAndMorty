@@ -9,10 +9,10 @@ const Header = () => {
         <img src="${logo}" alt="Logo Rick & Morty">
     </a>
     <nav class="header-nav">
-        <a href="#">
+        <a href="https://github.com/cristiandrc/SPA_RickAndMorty" target="_blank" >
             <img src="${github}" alt="logo github">
         </a>
-        <a href="#">
+        <a href="https://twitter.com/home" target="_blank">
             <img src="${twitter}" alt="logo twitter">
         </a>
     </nav>
