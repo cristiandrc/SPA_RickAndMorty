@@ -1,12 +1,14 @@
 import getData from '@utils/getData'
-import getHash from '../utils/getHash';
+import getHash from '../utils/getHash'
+
 
 const character = async () => {
     const id = getHash()
     const data = await getData(id);
     const view = `
     <section class="details">
-        <div class="details-container"> 
+        <div class="details-container">
+            <span id="closeModal" class="close-modal">X</span>
             <article class="details-main">
                 <img src="${data.image}" alt="">
                 <h2>${data.name}</h2>
@@ -22,7 +24,12 @@ const character = async () => {
     </section>
 
     `
-    return view
+    modal.innerHTML = view
+    modal.classList.remove('hide')
+    const closeModal = null || document.getElementById('closeModal')
+    closeModal.addEventListener('click',() => {
+        modal.classList.add('hide')
+    })
 }
 
 export default character

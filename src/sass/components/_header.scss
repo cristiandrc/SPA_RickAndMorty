@@ -3,11 +3,19 @@
     height: 60px;
     margin: 0 auto;
     padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     background-color: $color-primary;
+    display: flex;
     box-shadow: 0px 16px 27px -19px rgba(0,0,0,1);
+    
+    &-container{
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+    }
     
     &-logo {
         height: 100%;
@@ -19,14 +27,22 @@
     }
 
     &-nav {
+        display: flex;
+        align-items: center;
         
         a {
             display: inline-block;
             margin: 0 5px;
+            text-decoration: none;
         }
 
         img {
             width: 30px;
+        }
+
+        h2 {
+            font-size: 3.0rem;
+            color: black;
         }
     }
 }

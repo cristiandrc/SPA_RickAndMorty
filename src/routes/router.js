@@ -3,7 +3,6 @@ import character from '@pages/character'
 import Error404 from '@pages/Error404'
 import Header from '@templates/header'
 import getHash from '@utils/getHash'
-import getData from '@utils/getData'
 import resolveRoutes from '@utils/resolveRoutes'
 
 const routes = {
@@ -13,9 +12,21 @@ const routes = {
 }
 
 
+// const Router = async () => {
+//     const container = null || document.getElementById('main-container')
+//     const header = null || document.getElementById('header')
+    
+//     let hash = getHash()
+//     let route = await resolveRoutes(hash)
+//     let render = routes[route] ? routes[route] : Error404
+//     container.innerHTML = await render()
+//     header.innerHTML = await Header()
+// }
+
 const Router = async () => {
     const container = null || document.getElementById('main-container')
     const header = null || document.getElementById('header')
+    const modal = null || document.getElementById('modal')
     
     let hash = getHash()
     let route = await resolveRoutes(hash)

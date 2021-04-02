@@ -3,11 +3,25 @@
     display: grid;
     place-items: center;
     text-align: center;
+
     &-container {
+        position: relative;
+        z-index: 2;
         border: solid 1px $color-secondary;
+        background-color: $color-primary;
+        border-radius: 5px;
         width: 250px;
         min-height: 350px;
         padding: 20px;
+        box-shadow: 1px -1px 30px 1px black;
+
+        .close-modal {
+            position: absolute;
+            right: 8px;
+            top: 5px;
+            font-size: 2.0rem;
+            font-weight: bold;
+        }
     }
     &-main {
         img {
