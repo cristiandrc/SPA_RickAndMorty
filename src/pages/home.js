@@ -3,7 +3,6 @@ import getData from '@utils/getData'
 const home = async () => {
     const data = await getData()
     const view = `
-    <div class="character">
         ${data.results.map(result => `
             <article>
             <a href="#/${result.id}/">
@@ -12,7 +11,7 @@ const home = async () => {
             </a>
             </article>
         `).join('')}
-    </div>
+    
     `
 
     return view
