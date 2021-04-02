@@ -26,12 +26,11 @@ const routes = {
 const Router = async () => {
     const container = null || document.getElementById('main-container')
     const header = null || document.getElementById('header')
-    const modal = null || document.getElementById('modal')
     
     let hash = getHash()
     let route = await resolveRoutes(hash)
     let render = routes[route] ? routes[route] : Error404
-    container.innerHTML = await render()
+    container.innerHTML = await home()
     header.innerHTML = await Header()
 }
 

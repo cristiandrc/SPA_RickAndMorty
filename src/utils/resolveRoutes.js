@@ -7,7 +7,7 @@ const resolveRoutes = async (route) => {
     const numberOfCharacter = data.info.count < 1000 ? 3 : 4
 
     if(route.length <= numberOfCharacter) {
-        let valiRoutes = route === '/' ? route : '/:id'
+        let valiRoutes = route === '/' ? route : '/'
         return valiRoutes
     }
 

@@ -8,7 +8,7 @@ const character = async () => {
     const view = `
     <section class="details">
         <div class="details-container">
-            <span id="closeModal" class="close-modal">X</span>
+            <a href="#/"><span id="closeModal" class="close-modal">X</span></a>
             <article class="details-main">
                 <img src="${data.image}" alt="">
                 <h2>${data.name}</h2>
