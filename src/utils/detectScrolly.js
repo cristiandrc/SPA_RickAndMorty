@@ -3,7 +3,7 @@ import getData from '@utils/getData'
 
 const container = null || document.getElementById('main-container')
 let allPages 
-let page = 32
+let page = 1
 
 
 const getPages = async () => {
@@ -20,9 +20,7 @@ const detectScrolly = async () => {
 
     if(Math.ceil(scrolled) === scrollable  && page <= allPages){
         page ++
-        console.log('pagina actual ' + page)
         container.innerHTML += await home()
-        
     }
 }
 

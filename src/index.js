@@ -8,3 +8,6 @@ import detectScrolly from '@utils/detectScrolly'
 window.addEventListener('load', Router())
 window.addEventListener('hashchange', character)
 window.addEventListener('scroll', detectScrolly)
+
+
+
