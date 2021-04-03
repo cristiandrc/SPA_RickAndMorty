@@ -8,7 +8,9 @@ let page = 1
 
 const getPages = async () => {
     const data = await getData(' ')//se envia ' ' para que no ejecute el contador de GetUrlApi :)
-    allPages = data.info.pages
+    const SEARCH = location.search
+    
+    allPages = data.info.pages + SEARCH
 }
 window.addEventListener('load', getPages())
 
