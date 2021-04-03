@@ -3,16 +3,20 @@ import getData from '@utils/getData'
 
 const container = null || document.getElementById('main-container')
 let allPages 
-let page = 1
+let page = 2
 
 
 const getPages = async () => {
-    const data = await getData(' ')//se envia ' ' para que no ejecute el contador de GetUrlApi :)
     const SEARCH = location.search
     
-    allPages = data.info.pages + SEARCH
+    const data = await getData(' ',SEARCH)//se envia ' ' para que no ejecute el contador de GetUrlApi :)
+    
+    allPages = data.info.pages
+    console.log(allPages + ' yo soy el total de paginas')
 }
 window.addEventListener('load', getPages())
+// window.addEventListener('search', getPages)
+
 
 
 

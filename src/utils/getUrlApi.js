@@ -5,11 +5,10 @@ let count = 1
 
 
 const getUrlApi = () => {
-    let API_PAGE = API + count
+    let SEARCH = location.search
+    let API_PAGE = `${API}${count}&${SEARCH}`
     count++
-    const SEARCH = location.search
-    console.log(SEARCH)
-    return API_PAGE + SEARCH
+    return API_PAGE
 }
 
 export default getUrlApi
