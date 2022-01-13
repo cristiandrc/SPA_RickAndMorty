@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -29,16 +30,19 @@ module.exports = {
                 filename: './index.html'
             }
         ),
-        new CopyPlugin(
-            {
-                patterns: [
-                    {
-                        from: path.resolve(__dirname, "src", "assets/images"),
-                        to: "assets/images"
-                    }
-                ]
-            }
-        )
+        // new CopyPlugin(
+        //     {
+        //         patterns: [
+        //             {
+        //                 from: path.resolve(__dirname, "src", "assets/images"),
+        //                 to: "assets/images"
+        //             }
+        //         ]
+        //     }
+        // ),
+
+        new MiniCssExtractPlugin(),
+
     ],
 
     module: {
@@ -54,25 +58,33 @@ module.exports = {
             {
                 test: /\.s[ac]ss$/i,
                 use: [ 
-                    'style-loader',
+                    MiniCssExtractPlugin.loader,
                     'css-loader',
-                    'sass-loader'
+                    'sass-loader',
                 ]
             },
             
             {
                 test: /\.(png|svg|jpg|jpeg|gif)$/i,
-                type: 'asset/resource',
+                use: [
+                    {
+                        loader:'url-loader',
+                        options:{
+                            name: '[name].[ext]',
+                            outputPath: 'images'
+                        }
+                    }
+                ]
             }
         ]
     },
 
 
 
-    devServer: {
-        contentBase: path.join(__dirname, 'docs'),
-        compress: true,
-        historyApiFallback: true,
-        port: 8080,
-    }
+    // devServer: {
+    //     contentBase: path.join(__dirname, 'docs'),
+    //     compress: true,
+    //     historyApiFallback: true,
+    //     port: 8080,
+    // }
 }
